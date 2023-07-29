@@ -1,0 +1,44 @@
+<p-card styleClass="mt-2">
+  <form [formGroup]="medicamentoForm" (ngSubmit)="onClickSubmit()">
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-12">
+        <label for="nmMedicamento">Nome Medicamento</label>
+        <input
+          pInputText
+          formControlName="nmMedicamento"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        />
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="idTipo">Tipo Medicamento</label>
+        <p-dropdown
+          [options]="idTipos"
+          formControlName="idTipo"
+          placeholder="Tipo Medicamento"
+          styleClass="w-full"
+        ></p-dropdown>
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="idSituacao">Situacao</label>
+        <p-dropdown
+          [options]="idSituacaos"
+          formControlName="idSituacao"
+          placeholder="Situacao"
+          styleClass="w-full"
+        ></p-dropdown>
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="cdFabricante">Fabricante</label>
+        <app-fabricante-pesquisa-form formControlName="cdFabricante" />
+      </div>  
+    </div>  
+    <div class="card flex flex-column md:flex-column gap-3">
+      <app-buttons-bar
+        [showSaveSubmit]="true"
+        [disabledSave]="!medicamentoForm.valid"
+        (clickBack)="clickBack()"
+      />
+    </div>
+  </form>
+
+</p-card>

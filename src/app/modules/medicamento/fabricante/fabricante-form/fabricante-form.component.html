@@ -1,0 +1,31 @@
+<p-card styleClass="mt-2">
+  <form [formGroup]="fabricanteForm" (ngSubmit)="onClickSubmit()">
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-12">
+        <label for="nmFabricante">Nome Fabricante</label>
+        <input
+          pInputText
+          formControlName="nmFabricante"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        />
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="idOrigem">Origem</label>
+        <p-dropdown
+          [options]="idOrigems"
+          formControlName="idOrigem"
+          placeholder="Origem"
+          styleClass="w-full"
+        ></p-dropdown>
+      </div>  
+    </div>  
+    <div class="card flex flex-column md:flex-column gap-3">
+      <app-buttons-bar
+        [showSaveSubmit]="true"
+        [disabledSave]="!fabricanteForm.valid"
+        (clickBack)="clickBack()"
+      />
+    </div>
+  </form>
+
+</p-card>

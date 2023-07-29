@@ -1,0 +1,16 @@
+<app-search-filter
+  [filters]="searhFilters"
+  (clickFilter)="onClickFilter($event)"
+></app-search-filter>
+<app-dynamic-table
+  [loading]="loading"
+  [columns]="columns"
+  (onChangePagination)="onChangePagination($event)"
+  [items]="items"
+  (onDeleteItem)="onClickDeleteItem($event)"
+  (onEditItem)="onClickEditItem($event)"
+  (onSelectItem)="onClickSelectItem($event)"
+  [totalItens]="totalItens"
+  [showButtons]="showButtons"
+></app-dynamic-table>
+<app-buttons-bar (clickNew)="onClickNew()" *ngIf="showNewButton" />

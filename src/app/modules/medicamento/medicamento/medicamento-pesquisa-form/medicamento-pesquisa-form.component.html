@@ -1,0 +1,38 @@
+<div class="flex align-content-center flex-wrap">
+  <div class="field col-12 md:col-3">
+    <input
+      id="cdMedicamento"
+      pInputText
+      placeholder="Código medicamento"
+      [ngModel]="selectedItem?.cdMedicamento"
+      (change)="changeEvent($event)"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
+  </div>
+  <div class="field col-12 md:col-7">
+    <input
+      pInputText
+      id="nmMedicamento"
+      placeholder="Nome medicamento"
+      [ngModel]="selectedItem?.nmMedicamento"
+      type="text"
+      disabled="true"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
+  </div>
+  <div class="field col-12 md:col-2">
+    <button
+      type="button"
+      class="p-button-success"
+      style="height: 40px"
+      pButton
+      pRipple
+      icon="pi pi-search"
+      label="Pesquisar"
+      (click)="clickSearch()"
+      pTooltip="Pesquisar Itens"
+      tooltipPosition="top"
+    ></button>
+  </div>
+</div>

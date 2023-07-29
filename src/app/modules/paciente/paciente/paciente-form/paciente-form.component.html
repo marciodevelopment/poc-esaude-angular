@@ -1,0 +1,70 @@
+<p-card styleClass="mt-2">
+  <form [formGroup]="pacienteForm" (ngSubmit)="onClickSubmit()">
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-12">
+        <label for="nmPaciente">Nome Paciente</label>
+        <input
+          pInputText
+          formControlName="nmPaciente"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        />
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="nmMae">Nome mãe</label>
+        <input
+          pInputText
+          formControlName="nmMae"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        />
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="nmPai">Nome pai</label>
+        <input
+          pInputText
+          formControlName="nmPai"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        />
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="nmSocial">Nome Social</label>
+        <input
+          pInputText
+          formControlName="nmSocial"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        />
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="sexo">Sexo</label>
+        <p-dropdown
+          [options]="sexos"
+          formControlName="sexo"
+          placeholder="Sexo"
+          styleClass="w-full"
+        ></p-dropdown>
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="dtNascimento">Data de nascimento</label>
+         <app-calendar
+          formControlName="dtNascimento"
+          dateFormat="dd/mm/yy"
+         />
+      </div>  
+      <div class="field col-12 md:col-12">
+        <label for="nrPlanoSaude">Número do Plano de Saúde</label>
+        <input
+          pInputText
+          formControlName="nrPlanoSaude"
+          class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        />
+      </div>  
+    </div>  
+    <div class="card flex flex-column md:flex-column gap-3">
+      <app-buttons-bar
+        [showSaveSubmit]="true"
+        [disabledSave]="!pacienteForm.valid"
+        (clickBack)="clickBack()"
+      />
+    </div>
+  </form>
+
+</p-card>
